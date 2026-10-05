@@ -1,65 +1,68 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * SofiApp Theme
+ * Designed for a warm, soft, calming and fluid reading experience.
+ * Soft warm alabaster background, charcoal ink typography, and graceful editorial serif.
  */
 
-import '@/global.css';
-
-import { Platform } from 'react-native';
-
 export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
-} as const;
+  // Backgrounds
+  background: '#FAF9F6',       // Warm alabaster / porcelain
+  surface: '#FFFFFF',          // Pure clean card surface
+  surfaceSubtle: '#F2F1EC',    // Soft pill badges & tag backgrounds
+  surfaceHover: '#EAE8E1',     // Soft press feedback
+  
+  // Ink & Typography
+  textPrimary: '#1E1D1B',      // Deep warm charcoal (gentler than harsh #000)
+  textSecondary: '#6B6862',    // Warm slate
+  textTertiary: '#A09D96',     // Faint caption / placeholder
+  
+  // Borders & Accents
+  border: '#E8E6DF',           // Whisper-soft border
+  borderSubtle: '#F0EFEA',     // Ultra-light inner divider
+  accent: '#1E1D1B',           // Deep charcoal primary actions
+  accentMuted: '#3D3B38',
+  
+  // Functional
+  white: '#FFFFFF',
+  black: '#1E1D1B',
+  danger: '#C84C40',
+  success: '#3F7A59',
+  
+  // Glows & Shadows
+  shadow: 'rgba(30, 29, 27, 0.05)',
+  shadowElevated: 'rgba(30, 29, 27, 0.08)',
+  micGlow: 'rgba(30, 29, 27, 0.08)',
+};
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export const Fonts = {
+  // Editorial Serif for Scripture & Greek/Hebrew typography
+  serif: 'Lora_400Regular',
+  serifItalic: 'Lora_400Regular_Italic',
+  serifMedium: 'Lora_500Medium',
+  serifSemiBold: 'Lora_600SemiBold',
+  serifBold: 'Lora_700Bold',
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
+  // Modern Grotesque Sans for UI & readability
+  sans: 'PlusJakartaSans_400Regular',
+  sansMedium: 'PlusJakartaSans_500Medium',
+  sansSemiBold: 'PlusJakartaSans_600SemiBold',
+  sansBold: 'PlusJakartaSans_700Bold',
+};
 
 export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
-} as const;
+  xxs: 4,
+  xs: 6,
+  sm: 10,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 40,
+};
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const Radii = {
+  sm: 10,
+  md: 16,
+  lg: 22,
+  xl: 28,
+  full: 9999,
+};
